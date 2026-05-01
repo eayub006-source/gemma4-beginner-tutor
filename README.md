@@ -1,4 +1,4 @@
-# Gemma 4 Beginner Tutor 🎓
+# Gemma 4 Beginner Tutor 
 
 A local-first AI tutor built with Streamlit + Ollama + Gemma 4, designed for low-connectivity learning environments.
 
@@ -8,7 +8,7 @@ This project is optimized for hackathons and demos, with a focus on simplicity, 
 ![Streamlit](https://img.shields.io/badge/Streamlit-App-red)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green)
 
-## 📸 Screenshots
+##  Screenshots
 
 ### Home Screen
 ![Home](assets/screenshots/app-home.png)
@@ -16,14 +16,14 @@ This project is optimized for hackathons and demos, with a focus on simplicity, 
 ### Chat Interaction
 ![Chat](assets/screenshots/app-chat-processing.png)
 
-## ✨ Features
+##  Features
 
-- 💻 Runs completely locally (no API key required)
-- 📚 Beginner-friendly explanations with simple examples
-- 💬 Chat-based learning interface
-- 📁 Export chat history for revision or teacher feedback
-- ⚠️ Smart fallback guidance if Ollama is not running
-- 🔒 Privacy-first design (no cloud prompt processing)
+- Runs completely locally (no API key required)
+- Beginner-friendly explanations with simple examples
+- Chat-based learning interface
+- Export chat history for revision or teacher feedback
+- Smart fallback guidance if Ollama is not running
+- Privacy-first design (no cloud prompt processing)
 
 ## 🛠 Tech stack
 
@@ -32,7 +32,7 @@ This project is optimized for hackathons and demos, with a focus on simplicity, 
 - Ollama
 - Gemma 4 model (`gemma4:latest`)
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 git clone https://github.com/eayub006-source/gemma4-beginner-tutor.git
@@ -114,13 +114,13 @@ Expected on first prompt while model loads into memory.
 python -m streamlit run app.py --server.port 8502
 ```
 
-## 🤖 Why Gemma 4?
+##  Why Gemma 4?
 
 - Efficient local inference via Ollama
 - Strong performance for beginner-level explanations
 - Easy integration into local-first applications
 
-## 🧪 Kaggle Submission (Judge-Friendly)
+##  Kaggle Submission (Judge-Friendly)
 
 ### Problem
 Students in low-connectivity environments often cannot access reliable online tutoring tools.
@@ -141,7 +141,7 @@ Gemma 4 Beginner Tutor provides local, privacy-preserving, beginner-friendly edu
 - Export chat history as proof of utility
 - Highlight local-first privacy and offline-friendly workflow
 
-## 🎥 Demo
+##  Demo
 
 - Launch app in under 30 seconds
 - Ask a question
