@@ -1,290 +1,159 @@
-# Gemma 4 Beginner Tutor (Local-First Streamlit App)
+# Gemma 4 Beginner Tutor 🎓
 
-A beginner-friendly AI tutor app built with **Streamlit + Ollama + Gemma 4**.
+A local-first AI tutor built with Streamlit + Ollama + Gemma 4, designed for low-connectivity learning environments.
 
-This project is designed for hackathon/demo use and focuses on:
+This project is optimized for hackathons and demos, with a focus on simplicity, clarity, and real-world impact.
 
-- Local-first AI usage
-- Simple setup for beginners
-- Clear impact narrative (works in low-connectivity settings)
-- Safe fallback messages when Ollama/model is not ready
+![Python](https://img.shields.io/badge/Python-3.14%2B-blue)
+![Streamlit](https://img.shields.io/badge/Streamlit-App-red)
+![License: MIT](https://img.shields.io/badge/License-MIT-green)
 
----
+## 📸 Screenshots
 
-## Screenshot gallery
+### Home Screen
+![Home](assets/screenshots/app-home.png)
 
-### Home screen
+### Chat Interaction
+![Chat](assets/screenshots/app-chat-processing.png)
 
-![Home screen](assets/screenshots/app-home.png)
+## ✨ Features
 
-### Live interaction view
+- 💻 Runs completely locally (no API key required)
+- 📚 Beginner-friendly explanations with simple examples
+- 💬 Chat-based learning interface
+- 📁 Export chat history for revision or teacher feedback
+- ⚠️ Smart fallback guidance if Ollama is not running
+- 🔒 Privacy-first design (no cloud prompt processing)
 
-![Live interaction](assets/screenshots/app-chat-processing.png)
-
----
-
-## Kaggle judges section 
-
-### 1) Problem statement
-
-Many students in low-connectivity environments do not have stable access to
-online tutoring tools. This limits personalized support and self-paced
-learning.
-
-### 2) Proposed solution
-
-**Gemma 4 Beginner Tutor** is a local-first educational assistant that runs on
-device through Ollama. It gives beginner-friendly explanations, examples, and
-practice prompts without requiring cloud API keys.
-
-### 3) Why Gemma 4
-
-- Strong local inference capability for practical offline usage
-- Good quality responses for beginner education prompts
-- Easy integration with local app workflows through Ollama runtime
-
-### 4) Real-world impact
-
-- Supports students where internet is unstable or expensive
-- Preserves privacy through local processing
-- Reduces setup complexity for schools and small learning centers
-
-### 5) Technical architecture
-
-- **Frontend/UI:** Streamlit web app
-- **Inference layer:** Ollama HTTP API on `127.0.0.1:11434`
-- **Model:** `gemma4:latest`
-- **App behavior:**
-  - Maintains chat history in Streamlit session state
-  - Provides clear setup fallback when Ollama is unavailable
-  - Allows chat export for revision and teacher review
-
-### 6) Functional status
-
-- Working local app with browser-accessible UI
-- Model status detection implemented
-- Chat flow and export flow implemented
-- Beginner-safe error handling implemented
-
-### 7) Demo checklist for judges
-
-- Show app launch in under 30 seconds
-- Ask one real educational question
-- Show response quality and beginner formatting
-- Highlight local-first privacy and connectivity benefits
-- Export chat history to prove practical classroom utility
-
-### 8) Suggested evaluation plan
-
-- **Latency:** first response time vs subsequent response time
-- **Usability:** time for a new user to ask first question
-- **Learning quality:** short rubric (clarity, correctness, actionability)
-- **Reliability:** behavior when Ollama is down or model is missing
-
-### 9) What is included in this repository
-
-- Complete runnable source code
-- Setup and troubleshooting documentation
-- Launch script for Windows
-- Real application screenshots for verification
-
----
-
-## What this app does
-
-- Runs a chat-style tutor UI in your browser
-- Uses `gemma4` model through Ollama API (`http://127.0.0.1:11434`)
-- Stores conversation in Streamlit session
-- Lets user clear chat
-- Lets user download chat history as a text file
-- Shows setup guidance directly in UI when Ollama is unavailable
-
----
-
-## Tech stack
+## 🛠 Tech stack
 
 - Python 3.14+
 - Streamlit
 - Ollama
 - Gemma 4 model (`gemma4:latest`)
 
----
+## 🚀 Quick Start
 
-## Project structure
-
-```text
-gemma_app/
-├── assets/
-│   └── screenshots/
-│       ├── app-home.png
-│       └── app-chat-processing.png
-├── app.py
-├── requirements.txt
-├── RUN_ME.ps1
-├── .gitignore
-├── LICENSE
-└── README.md
+```bash
+git clone https://github.com/eayub006-source/gemma4-beginner-tutor.git
+cd gemma4-beginner-tutor
+python -m pip install -r requirements.txt
+ollama pull gemma4
+python -m streamlit run app.py
 ```
 
----
-
-## Prerequisites
-
-1. **Python installed**
-   - Verify:
-     ```powershell
-     python --version
-     ```
-
-2. **Ollama installed**
-   - Verify:
-     ```powershell
-     ollama --version
-     ```
-
-3. **Gemma model downloaded**
-   - Pull model:
-     ```powershell
-     ollama pull gemma4
-     ```
-   - Check model list:
-     ```powershell
-     ollama list
-     ```
-
-> Note: `gemma4` download is large (~9.6 GB), so first-time setup may take a while.
-
----
+Then open: [http://localhost:8501](http://localhost:8501)
 
 ## Installation
 
-From project folder:
+1. Verify Python:
+   ```bash
+   python --version
+   ```
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Verify Ollama:
+   ```bash
+   ollama --version
+   ```
+4. Download model:
+   ```bash
+   ollama pull gemma4
+   ```
 
-```powershell
-cd "C:\Users\DELL PRECision 7550\gemma_app"
-python -m pip install -r requirements.txt
-```
+> Note: `gemma4` is large (~9.6 GB), so first download can take time.
 
----
+## Usage
 
-## Run the app
-
-### Option A (recommended)
-
-```powershell
-powershell -ExecutionPolicy Bypass -File "C:\Users\DELL PRECision 7550\gemma_app\RUN_ME.ps1"
-```
-
-### Option B (manual)
-
-```powershell
-cd "C:\Users\DELL PRECision 7550\gemma_app"
-python -m streamlit run app.py
-```
-
-Then open:
-
-- [http://localhost:8501](http://localhost:8501)
-
----
-
-## How to use
-
-1. Open the app in browser
-2. Keep model name as `gemma4` (or change if your Ollama tag differs)
-3. Ask short study questions (for faster responses)
-4. Use **Clear Chat** to reset
-5. Use **Download Chat** to export conversation
-
----
+- Run app:
+  ```bash
+  python -m streamlit run app.py
+  ```
+- Ask a study question in chat
+- Use **Clear Chat** to reset
+- Use **Download Chat** to export session text
 
 ## Troubleshooting
 
-### 1) Browser shows `ERR_CONNECTION_REFUSED`
+### `ERR_CONNECTION_REFUSED`
+Streamlit is not running.
 
-This means Streamlit is not running yet.
-
-Run:
-
-```powershell
-cd "C:\Users\DELL PRECision 7550\gemma_app"
+```bash
 python -m streamlit run app.py
 ```
 
-### 2) App says Ollama is not ready
+### Ollama is not ready
+Start Ollama and verify model:
 
-Start Ollama service and ensure model exists:
-
-```powershell
+```bash
 ollama serve
 ollama list
 ```
 
-If `gemma4` is missing:
+If needed:
 
-```powershell
+```bash
 ollama pull gemma4
 ```
 
-### 3) `streamlit` command not found
+### `streamlit` command not found
+Use module form:
 
-Use module style:
-
-```powershell
+```bash
 python -m streamlit run app.py
 ```
 
-### 4) First response is very slow
+### First reply is slow
+Expected on first prompt while model loads into memory.
 
-Normal behavior: first response loads model into memory.
-Next responses are faster.
+### Port `8501` already in use
 
-### 5) Port 8501 already in use
-
-Use another port:
-
-```powershell
+```bash
 python -m streamlit run app.py --server.port 8502
 ```
 
----
+## 🤖 Why Gemma 4?
 
-## Hackathon submission notes
+- Efficient local inference via Ollama
+- Strong performance for beginner-level explanations
+- Easy integration into local-first applications
 
-This app supports a strong beginner impact story:
+## 🧪 Kaggle Submission (Judge-Friendly)
 
-- **Problem**: limited internet and access to educational support
-- **Solution**: local-first tutoring assistant
-- **Why Gemma 4**: capable local model with meaningful offline utility
-- **Demo value**: real working application, not just slides
+### Problem
+Students in low-connectivity environments often cannot access reliable online tutoring tools.
 
-For a stronger submission, add:
+### Solution
+Gemma 4 Beginner Tutor provides local, privacy-preserving, beginner-friendly educational support through a simple chat interface.
 
-- Sample lesson plans
-- Multilingual prompts
-- Performance metrics (latency and quality examples)
-- A short user test with classmates/teachers
+### Architecture
+- UI: Streamlit web app
+- Inference: Ollama HTTP API (`127.0.0.1:11434`)
+- Model: `gemma4:latest`
+- State: Streamlit session state for chat history
 
----
+### Demo checklist
+- Launch app in under 30 seconds
+- Ask one real educational prompt
+- Show clear beginner-style response
+- Export chat history as proof of utility
+- Highlight local-first privacy and offline-friendly workflow
 
-## Security and privacy notes
+## 🎥 Demo
 
-- Prompts are sent to local Ollama endpoint (`127.0.0.1`) by default
-- No cloud API key is required in current version
-- Chat is stored in session state while app is open
-- Exported chat file is local to user machine
-
----
+- Launch app in under 30 seconds
+- Ask a question
+- Export chat history
 
 ## Future improvements
 
-- Add voice input/output
-- Add language selector
-- Add education-grade prompt templates
-- Add PDF/image study material support
-- Add local usage analytics dashboard
-
----
+- Voice input and output
+- Multilingual learning mode
+- Education-specific prompt templates
+- PDF/image study material support
+- Local analytics dashboard for learning progress
 
 ## License
 
