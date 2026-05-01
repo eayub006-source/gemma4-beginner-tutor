@@ -23,7 +23,7 @@ This project is designed for hackathon/demo use and focuses on:
 
 ---
 
-## Kaggle judges section (submission-ready)
+## Kaggle judges section 
 
 ### 1) Problem statement
 
