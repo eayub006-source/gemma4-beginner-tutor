@@ -1,0 +1,8 @@
+.mypy_cache/
+__pycache__/
+.streamlit/
+.env
+.venv/
+venv/
+*.pyc
+chat_history.txt
