@@ -11,6 +11,85 @@ This project is designed for hackathon/demo use and focuses on:
 
 ---
 
+## Screenshot gallery
+
+### Home screen
+
+![Home screen](assets/screenshots/app-home.png)
+
+### Live interaction view
+
+![Live interaction](assets/screenshots/app-chat-processing.png)
+
+---
+
+## Kaggle judges section (submission-ready)
+
+### 1) Problem statement
+
+Many students in low-connectivity environments do not have stable access to
+online tutoring tools. This limits personalized support and self-paced
+learning.
+
+### 2) Proposed solution
+
+**Gemma 4 Beginner Tutor** is a local-first educational assistant that runs on
+device through Ollama. It gives beginner-friendly explanations, examples, and
+practice prompts without requiring cloud API keys.
+
+### 3) Why Gemma 4
+
+- Strong local inference capability for practical offline usage
+- Good quality responses for beginner education prompts
+- Easy integration with local app workflows through Ollama runtime
+
+### 4) Real-world impact
+
+- Supports students where internet is unstable or expensive
+- Preserves privacy through local processing
+- Reduces setup complexity for schools and small learning centers
+
+### 5) Technical architecture
+
+- **Frontend/UI:** Streamlit web app
+- **Inference layer:** Ollama HTTP API on `127.0.0.1:11434`
+- **Model:** `gemma4:latest`
+- **App behavior:**
+  - Maintains chat history in Streamlit session state
+  - Provides clear setup fallback when Ollama is unavailable
+  - Allows chat export for revision and teacher review
+
+### 6) Functional status
+
+- Working local app with browser-accessible UI
+- Model status detection implemented
+- Chat flow and export flow implemented
+- Beginner-safe error handling implemented
+
+### 7) Demo checklist for judges
+
+- Show app launch in under 30 seconds
+- Ask one real educational question
+- Show response quality and beginner formatting
+- Highlight local-first privacy and connectivity benefits
+- Export chat history to prove practical classroom utility
+
+### 8) Suggested evaluation plan
+
+- **Latency:** first response time vs subsequent response time
+- **Usability:** time for a new user to ask first question
+- **Learning quality:** short rubric (clarity, correctness, actionability)
+- **Reliability:** behavior when Ollama is down or model is missing
+
+### 9) What is included in this repository
+
+- Complete runnable source code
+- Setup and troubleshooting documentation
+- Launch script for Windows
+- Real application screenshots for verification
+
+---
+
 ## What this app does
 
 - Runs a chat-style tutor UI in your browser
@@ -35,10 +114,15 @@ This project is designed for hackathon/demo use and focuses on:
 
 ```text
 gemma_app/
+├── assets/
+│   └── screenshots/
+│       ├── app-home.png
+│       └── app-chat-processing.png
 ├── app.py
 ├── requirements.txt
 ├── RUN_ME.ps1
 ├── .gitignore
+├── LICENSE
 └── README.md
 ```
 
@@ -204,4 +288,4 @@ For a stronger submission, add:
 
 ## License
 
-For hackathon and educational use. Add an open-source license (MIT/Apache-2.0) before public release if needed.
+This project is licensed under the MIT License. See `LICENSE`.
